@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: resort-configMap
+  namespace: ns-resort
+data:
+  feign.resort.url: http://resort:8080

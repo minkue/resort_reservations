@@ -1,0 +1,12 @@
+resortreservation/ReservationController.class
+resortreservation/ReservationRepository.class
+resortreservation/AbstractEvent$1.class
+resortreservation/ReservationRegistered.class
+resortreservation/config/kafka/KafkaProcessor.class
+resortreservation/external/ResortService.class
+resortreservation/PolicyHandler.class
+resortreservation/ReservationApplication.class
+resortreservation/ReservationCanceled.class
+resortreservation/Reservation.class
+resortreservation/external/Resort.class
+resortreservation/AbstractEvent.class
