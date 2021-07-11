@@ -12,6 +12,21 @@ import java.util.List;
  @RestController
  public class ResortController {
 
+    private ResortRepository repository;
 
+    public ResortController(ResortRepository repository){
+        this.repository = repository;
+    }
+
+    @RequestMapping(method=RequestMethod.GET, value="/resorts/{id}/status")
+    public Resort getResortStatus (@PathVariable("id") Long id){
+
+        //hystix test code
+        // try {
+        //     Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+        // } catch (InterruptedException e) { }
+
+        return repository.findById(id).get();
+    }
 
  }

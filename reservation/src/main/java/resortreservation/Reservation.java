@@ -37,6 +37,10 @@ public class Reservation {
         //Resort 서비스에서 Resort의 상태를 가져옴
         resort = ReservationApplication.applicationContext.getBean(resortreservation.external.ResortService.class)
             .getResortStatus(resortId);
+        
+        if (resort == null){
+            throw new Exception("Fallback");
+        }
 
         // 예약 가능상태 여부에 따라 처리
         if ("Available".equals(resort.getResortStatus())){
@@ -49,7 +53,7 @@ public class Reservation {
             BeanUtils.copyProperties(this, reservationRegistered);
             reservationRegistered.publishAfterCommit();
         } else {
-            throw new Exception("The resort is not in a usable status.");
+            //throw new Exception("The resort is not in a usable status.");
         }
 
 
